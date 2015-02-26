@@ -20,8 +20,10 @@ app.controller('AppCtrl', ['$scope', '$http', 'API_URL', '$interval', function($
 
         // get start and end date of each
         for(var i = 0; i < events.list.length; i++) {
-          events.list[i].start_time = Date.parse(events.list[i].start_time);
-          events.list[i].end_time = Date.parse(events.list[i].end_time);
+          var date = events.list[i].start_time.replace(/\s/, "T"); // date fix for firefox
+
+          events.list[i].start_time = Date.parse(date);
+          events.list[i].end_time = Date.parse(date);
 
           dates.push({
             start_time: events.list[i].start_time,
@@ -35,18 +37,18 @@ app.controller('AppCtrl', ['$scope', '$http', 'API_URL', '$interval', function($
 
         $scope.events = events.list;
 
-      });      
+      });
     }
   }
 
   var meetings = {
     current: function(){
       for(var i = 0; i < dates.length; i++) {
-        // is now between meeting start and end time? 
+        // is now between meeting start and end time?
         if (now >= dates[i].start_time && now <= dates[i].end_time) {
           $scope.currentEvent = dates[i].start_time;
         }
-      }      
+      }
     },
     soon: function(){ 
       for(var i = 0; i < dates.length; i++) {
@@ -58,8 +60,7 @@ app.controller('AppCtrl', ['$scope', '$http', 'API_URL', '$interval', function($
         if (seconds < 1800 && seconds > 0){
           $scope.soonEvent = dates[i].start_time;
         }
-
-      }      
+      }
     }
   }
 
