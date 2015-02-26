@@ -115,8 +115,6 @@ footer {
         background: #717171; }
 
 .attendees {
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   margin-top: 10px; }
 
@@ -129,7 +127,8 @@ footer {
     background-position: center;
     border-radius: 50%;
     width: 50px;
-    height: 50px; }
+    height: 50px;
+    display: inline-block; }
   .attendee__name {
     position: absolute;
     width: 100px;
@@ -165,8 +164,7 @@ footer {
   position: absolute;
   display: block;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
   right: 100px;
   background: white;
   color: #f4725b;
@@ -180,8 +178,7 @@ footer {
   position: absolute;
   display: block;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
   right: 100px;
   background: #f4725b;
   color: white;
