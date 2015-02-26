@@ -12,6 +12,18 @@ html(lang="en", ng-app="app")
           .col-6
             span.current-time Current Time:
     section
+      .events
+        .event(ng-repeat="event in events |  orderBy: 'start_time'")
+          .container
+            .event__hours
+              span {{ event.start_time | date:'shortTime' }}
+              span {{ event.end_time | date:'shortTime' }}
+            h2.event__name {{ event.name }}
+            span.event__location {{ event.location }}
+            .attendees
+              .attendee(ng-repeat="attendees in event.attendees")
+                img.attendee__image(ng-style="{'background-image':'url({{attendees.photo}})'}")
+                .attendee__name {{ attendees.name }}    
     footer
       .container
         .row
