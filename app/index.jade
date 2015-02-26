@@ -10,7 +10,7 @@ html(lang="en", ng-app="app")
           .col-6
             h1.title FakeCo Meetings
           .col-6
-            span.current-time Current Time:
+            span.current-time Current Time: {{ currentTime | date:'shortTime'}}
     section
       .events
         .event(ng-repeat="event in events |  orderBy: 'start_time'")
