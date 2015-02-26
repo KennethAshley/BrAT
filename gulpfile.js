@@ -3,7 +3,13 @@ var gulp = require('gulp'),
     reload      = browserSync.reload,
     sass = require('gulp-sass'),
     jade = require('gulp-jade'),
-    concat = require('gulp-concat');
+    concat = require('gulp-concat'),
+    deploy = require('gulp-gh-pages');
+
+gulp.task('deploy', function () {
+  return gulp.src('./dist/**/*')
+    .pipe(deploy());
+});
 
 gulp.task('js', function() {
   gulp.src('./app/scripts/*.js')
