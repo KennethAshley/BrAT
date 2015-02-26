@@ -115,6 +115,8 @@ footer {
         background: #717171; }
 
 .attendees {
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   margin-top: 10px; }
 
@@ -163,7 +165,8 @@ footer {
   position: absolute;
   display: block;
   top: 50%;
-  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
   right: 100px;
   background: white;
   color: #f4725b;
@@ -177,7 +180,8 @@ footer {
   position: absolute;
   display: block;
   top: 50%;
-  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
   right: 100px;
   background: #f4725b;
   color: white;

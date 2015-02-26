@@ -15,3 +15,6 @@ bower install && npm install
 ```shell
 gulp
 ```
+
+## TODO
++ Responsive
