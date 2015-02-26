@@ -1,0 +1,19 @@
+{
+  "name": "BrAT",
+  "version": "0.0.0",
+  "authors": [
+    "Kenneth Nicholson <ken.u.diggitt@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.3.14",
+    "jquery": "~2.1.3"
+  }
+}
