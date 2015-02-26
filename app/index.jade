@@ -13,7 +13,9 @@ html(lang="en", ng-app="app")
             span.current-time Current Time: {{ currentTime | date:'shortTime'}}
     section
       .events
-        .event(ng-repeat="event in events |  orderBy: 'start_time'")
+        .event(ng-repeat="event in events |  orderBy: 'start_time'", ng-class="{'current': event.start_time === currentEvent, 'soon': event.start_time === soonEvent}")
+          .current-indicator(ng-if="event.start_time === currentEvent") IP
+          .soon-indicator(ng-if="event.start_time === soonEvent") Soon
           .container
             .event__hours
               span {{ event.start_time | date:'shortTime' }}

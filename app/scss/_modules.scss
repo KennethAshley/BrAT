@@ -116,3 +116,26 @@
     }
   }
 }
+
+@mixin indicator($background, $color){
+  position: absolute;
+  display: block;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 100px;
+  background: $background;
+  color: $color;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 50px;  
+}
+
+.current-indicator {
+  @include indicator(white, $orange);
+}
+
+.soon-indicator {
+  @include indicator($orange, white);
+}
