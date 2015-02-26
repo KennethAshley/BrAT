@@ -59,3 +59,60 @@
     }
   }
 }
+
+.attendees {
+  display: flex;
+  margin-top: 10px;
+}
+
+.attendee {
+  margin-right: 10px;
+  position: relative;
+
+  &__image {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+  }
+
+  &__name {
+    position: absolute;
+    width: 100px;
+    left: 50%;
+    text-align: center;
+    top: 120%;
+    margin-left: -50px;
+    font-size: .8em;
+    color: white;
+    background: $orange;
+    padding: 5px;
+    border-radius: 4px;
+    opacity: 0;
+    transition: opacity .2s linear;
+    z-index: 3;
+
+    &:after {
+      bottom: 100%;
+      left: 50%;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+      border-color: rgba(244, 114, 91, 0);
+      border-bottom-color: #f4725b;
+      border-width: 5px;
+      margin-left: -5px;
+    }
+  }
+
+  &:hover {
+    .attendee__name {
+      opacity: 1;
+    }
+  }
+}
