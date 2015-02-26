@@ -1,0 +1,23 @@
+*, *:after, *:before {
+  box-sizing: border-box;
+  font-family: $base-font;
+}
+
+header {
+  background: $orange;
+  color: white;
+  padding: 20px;
+}
+
+body {
+  margin: 0;
+}
+
+h1, h2, h3 {
+  margin: 0;
+}
+
+footer {
+  padding-top: 10px;
+  font-size: .9em;
+}
