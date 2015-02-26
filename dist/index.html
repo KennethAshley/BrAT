@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+  <head>
+    <title>FakeCo Meeting Schedule</title>
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+  </head>
+  <body ng-controller="AppCtrl">
+    <header>
+      <div class="container">
+        <div class="row">
+          <div class="col-6">
+            <h1 class="title">FakeCo Meetings</h1>
+          </div>
+          <div class="col-6"><span class="current-time">Current Time: {{ currentTime | date:'shortTime'}}</span></div>
+        </div>
+      </div>
+    </header>
+    <section>
+      <div class="events">
+        <div ng-repeat="event in events |  orderBy: 'start_time'" ng-class="{'current': event.start_time === currentEvent, 'soon': event.start_time === soonEvent}" class="event">
+          <div ng-if="event.start_time === currentEvent" class="current-indicator">IP</div>
+          <div ng-if="event.start_time === soonEvent" class="soon-indicator">Soon</div>
+          <div class="container">
+            <div class="event__hours"><span>{{ event.start_time | date:'shortTime' }}</span><span>{{ event.end_time | date:'shortTime' }}</span></div>
+            <h2 class="event__name">{{ event.name }}</h2><span class="event__location">{{ event.location }}</span>
+            <div class="attendees">
+              <div ng-repeat="attendees in event.attendees" class="attendee"><img ng-style="{'background-image':'url({{attendees.photo}})'}" class="attendee__image">
+                <div class="attendee__name">{{ attendees.name }}    </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-6"><span>IP = In Progress</span></div>
+          <div class="col-6"><span>Soon = Meeting scheduled soon</span></div>
+        </div>
+      </div>
+    </footer>
+    <script src="scripts/scripts.js" type="text/javascript"></script>
+    <script src="scripts/main.js" type="text/javascript"></script>
+  </body>
+</html>
