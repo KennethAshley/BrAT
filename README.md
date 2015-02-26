@@ -1,6 +1,6 @@
 # BrAT
 
-[BrAT Gh Page][http://kennethashley.github.io/BrAT/]
+[BrAT Gh Page](http://kennethashley.github.io/BrAT/)
 
 ## Usage
 
