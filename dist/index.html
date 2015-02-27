@@ -17,7 +17,7 @@
     </header>
     <section>
       <div class="events">
-        <div ng-repeat="event in events |  orderBy: 'start_time'" ng-class="{'current': event.start_time === currentEvent, 'soon': event.start_time === soonEvent}" class="event">
+        <div ng-repeat="event in events |  orderBy: 'start_time':'reverse'" ng-class="{'current': event.start_time === currentEvent, 'soon': event.start_time === soonEvent}" class="event">
           <div ng-if="event.start_time === currentEvent" class="current-indicator">IP</div>
           <div ng-if="event.start_time === soonEvent" class="soon-indicator">Soon</div>
           <div class="container">
