@@ -20,10 +20,12 @@ app.controller('AppCtrl', ['$scope', '$http', 'API_URL', '$interval', function($
 
         // get start and end date of each
         for(var i = 0; i < events.list.length; i++) {
-          var date = events.list[i].start_time.replace(/\s/, "T"); // date fix for firefox
+          // date fix for firefox
+          var start_time = events.list[i].start_time.replace(/\s/, "T");
+          var end_time = events.list[i].end_time.replace(/\s/, "T");
 
-          events.list[i].start_time = Date.parse(date);
-          events.list[i].end_time = Date.parse(date);
+          events.list[i].start_time = Date.parse(start_time);
+          events.list[i].end_time = Date.parse(end_time);
 
           dates.push({
             start_time: events.list[i].start_time,
